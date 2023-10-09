@@ -1,1 +1,18 @@
-/* You can add global styles to this file, and also import other style files */
+@import './assets/styles/variables';
+
+* {
+    margin: 0;
+    border: 0;
+    padding: 0;
+    outline: 0;
+}
+
+body {
+    background-color: $bg;
+    color: $onbg;
+}
+
+html {
+    font-size: 62.5%;
+    font-family: $textFont;
+}

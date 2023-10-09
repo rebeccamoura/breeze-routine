@@ -1,0 +1,12 @@
+@import '../../../assets/styles/variables';
+
+.header {
+    padding: 30px 0;
+    
+    .title {
+        font-family: $logoFont;
+        color: $onbg;
+        text-align: center;
+        font-size: $logoSize;
+    }
+}

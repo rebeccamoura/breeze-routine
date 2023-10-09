@@ -1,0 +1,8 @@
+@import './variables';
+
+.btn {
+    background-color: $hl;
+    padding: 15px 0;
+    font-size: $btnSize;
+    border-radius: 50px;
+}
