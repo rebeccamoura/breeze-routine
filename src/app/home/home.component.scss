@@ -1,11 +1,8 @@
 @import '../../assets/styles/variables';
-@import '../../assets/styles/utils';
+@import '../../assets/styles/utils/buttons';
+@import '../../assets/styles/utils/containers';
 
 .home {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-
     .content-wrapper {
         display: flex;
         flex-flow: column;
@@ -24,7 +21,7 @@
             color: $onbg;
             cursor: pointer;
             font-family: $logoFont;
-            margin-top: 20px;
+            margin: 50px 0 20px;
         }
         
         .sign-up {

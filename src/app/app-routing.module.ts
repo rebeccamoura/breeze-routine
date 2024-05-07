@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
+import { HubComponent } from './hub/hub.component';
 
 const routes: Routes = [
   {
@@ -11,7 +12,11 @@ const routes: Routes = [
   {
     path: 'home',
     component: HomeComponent
-  }
+  },
+  {
+    path: 'hub', // rota segura nível usuário
+    component: HubComponent
+  },
 ];
 
 @NgModule({
