@@ -12,7 +12,7 @@
         margin-bottom: 20px;
     }
 
-    .login {
+    .login-form {
         display: flex;
         flex-flow: column;
         text-align: center;
@@ -23,7 +23,6 @@
             font-size: $textSize;
             color: $onbg;
             text-decoration: none;
-            margin-top: 5px;
             font-family: $textFont;
 
             &:hover {
@@ -42,6 +41,42 @@
                     transform: translateX(-50%);
                     margin-top: 3px;
                 }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1080px) {
+    .login-wrapper {
+        width: 350px;
+
+        .title {
+            font-size: $textSize;
+        }
+
+        .login-form {
+            .submit {
+                font-size: $btnSmallSize;
+            }
+
+            .sign-up {
+                font-size: $inputSize;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 470px) {
+    .login-wrapper {
+        .title {
+            font-size: $btnSmallSize;
+        }
+        .login-form {
+            width: 280px;
+            margin: auto;
+
+            .text, .password, .email, .submit {
+                width: 280px;
             }
         }
     }

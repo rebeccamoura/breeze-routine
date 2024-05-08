@@ -7,3 +7,29 @@
         width: 500px;
     }
 }
+
+@media screen and (max-width: 1080px) {
+    .home {
+        .picture {
+            width: 350px;
+        }
+    }
+}
+
+@media screen and (max-width: 769px) {
+    .home {
+        flex-flow: column;
+
+        .picture {
+            margin: 30px 0 50px;
+        }
+    }
+}
+
+@media screen and (max-width: 470px) {
+    .home {
+        .picture {
+            width: 280px;
+        }
+    }
+}
