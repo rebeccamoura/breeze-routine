@@ -1,1 +1,16 @@
-<p>login works!</p>
+<div class="login-wrapper">
+    <h1 class="title">
+        Organize suas tarefas de maneira simples e rápida
+    </h1>
+    <form class="login">
+        <input class="user text" type="text" name="user" placeholder="Nome de usuário">
+        <input class="password" type="password" name="password" placeholder="Senha">
+        <input *ngIf="isRegister" class="email email" type="email" name="email" placeholder="Seu e-mail preferido">
+        <button class="login btn large-btn" type="submit">
+            {{ isRegister ? 'Criar conta' : 'Entrar' }}
+        </button>
+        <a class="sign-up" (click)="toggleSignUp()">
+            {{ isRegister ? 'Me enganei! Já tenho uma conta.' : 'Quero participarr!'}}
+        </a>
+    </form>
+</div>

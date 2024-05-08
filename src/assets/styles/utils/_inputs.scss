@@ -1,0 +1,11 @@
+@import '../variables';
+
+.text, .email, .password {
+    background-color: transparent;
+    width: 300px;
+    padding: 10px;
+    font-size: $inputSize;
+    border-bottom: 2px solid $onbg;
+    border-radius: 10px;
+    text-align: center;
+}

@@ -4,3 +4,11 @@
     font-size: $btnSize;
     border-radius: 50px;
 }
+
+.large-btn {
+    width: 350px;
+    font-weight: bold;
+    color: $onbg;
+    cursor: pointer;
+    font-family: $logoFont;
+}

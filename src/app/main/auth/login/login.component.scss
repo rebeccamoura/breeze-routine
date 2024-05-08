@@ -1,0 +1,48 @@
+@import '/src/assets/styles/variables';
+@import '/src/assets/styles/utils/buttons';
+@import '/src/assets/styles/utils/inputs';
+
+.login-wrapper {
+    width: 580px;
+
+    .title {
+        font-weight: normal;
+        font-size: $titleSize;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .login {
+        display: flex;
+        flex-flow: column;
+        text-align: center;
+        align-items: center;
+        gap: 30px;
+
+        .sign-up {
+            font-size: $textSize;
+            color: $onbg;
+            text-decoration: none;
+            margin-top: 5px;
+            font-family: $textFont;
+
+            &:hover {
+                position: relative;
+                font-weight: bold;
+                cursor: pointer;
+
+                &::after {
+                    content: '';
+                    position: absolute;
+                    width: 40%;
+                    height: 2px;
+                    background-color: $onbg;
+                    display: block;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    margin-top: 3px;
+                }
+            }
+        }
+    }
+}

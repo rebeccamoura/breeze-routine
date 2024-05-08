@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent {
+  isRegister: boolean = false;
 
+  toggleSignUp() {
+    this.isRegister = this.isRegister ? false : true;
+  }
 }

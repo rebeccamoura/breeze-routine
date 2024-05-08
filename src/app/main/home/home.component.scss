@@ -3,53 +3,6 @@
 @import '/src/assets/styles/utils/containers';
 
 .home {
-    .content-wrapper {
-        display: flex;
-        flex-flow: column;
-        text-align: center;
-        align-items: center;
-
-        .title {
-            font-weight: normal;
-            font-size: $titleSize;
-            width: 580px;
-        }
-
-        .sign-in {
-            width: 350px;
-            font-weight: bold;
-            color: $onbg;
-            cursor: pointer;
-            font-family: $logoFont;
-            margin: 50px 0 20px;
-        }
-        
-        .sign-up {
-            font-size: $textSize;
-            color: $onbg;
-            text-decoration: none;
-            margin-top: 5px;
-            font-family: $textFont;
-
-            &:hover {
-                position: relative;
-                font-weight: bold;
-
-                &::after {
-                    content: '';
-                    position: absolute;
-                    width: 40%;
-                    height: 2px;
-                    background-color: $onbg;
-                    display: block;
-                    left: 50%;
-                    transform: translateX(-50%);
-                    margin-top: 3px;
-                }
-            }
-        }
-    }
-
     .picture {
         width: 500px;
     }
