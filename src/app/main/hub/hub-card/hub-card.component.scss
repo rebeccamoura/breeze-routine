@@ -1,0 +1,26 @@
+@import '../../../../assets/styles/fonts/routine-icon';
+@import '../../../../assets/styles/variables';
+
+.hub-card {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3px;
+    width: 150px;
+    height: 150px;
+    border-radius: 10px;
+    box-sizing: border-box;
+    border: 5px solid $onbg;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+
+    span {
+        font-size: 4rem;
+    }
+
+    &:hover {
+        background-color: $onbg;
+        color: $bg
+    }
+}

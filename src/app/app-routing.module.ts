@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './main/home/home.component';
-import { HubComponent } from './main/hub/hub.component';
 
 const routes: Routes = [
   {
@@ -14,9 +13,9 @@ const routes: Routes = [
     component: HomeComponent
   },
   {
-    path: 'hub', // rota segura nível usuário
-    component: HubComponent
-  },
+    path: 'hub',
+    loadChildren: () => import('./main/hub/hub.module').then(m => m.HubModule)
+  }
 ];
 
 @NgModule({
