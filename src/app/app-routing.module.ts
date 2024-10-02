@@ -15,7 +15,11 @@ const routes: Routes = [
   {
     path: 'hub',
     loadChildren: () => import('./main/hub/hub.module').then(m => m.HubModule)
-  }
+  },
+  {
+    path: 'financial',
+    loadChildren: () => import('./main/financial/financial.module').then(m => m.FinancialModule)
+  },
 ];
 
 @NgModule({
