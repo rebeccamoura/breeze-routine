@@ -21,7 +21,7 @@
 
         .sign-up {
             font-size: $textSize;
-            color: $onbg;
+            color: $primary;
             text-decoration: none;
             font-family: $textFont;
 
@@ -35,7 +35,7 @@
                     position: absolute;
                     width: 40%;
                     height: 2px;
-                    background-color: $onbg;
+                    background-color: $primary;
                     display: block;
                     left: 50%;
                     transform: translateX(-50%);

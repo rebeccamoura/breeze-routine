@@ -11,7 +11,7 @@
     height: 150px;
     border-radius: 10px;
     box-sizing: border-box;
-    border: 5px solid $onbg;
+    border: 5px solid $primary;
     cursor: pointer;
     transition: all .3s ease-in-out;
 
@@ -20,7 +20,7 @@
     }
 
     &:hover {
-        background-color: $onbg;
+        background-color: $primary;
         color: $bg
     }
 }

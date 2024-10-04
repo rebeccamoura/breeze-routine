@@ -7,15 +7,19 @@
         width: 100%;
         max-width: 400px;
         border-radius: 26px;
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
 
         .wishes-header {
-            background-color: $hl;
+            background-color: $primary;
             padding: 15px;
             border-radius: 26px 26px 0 0;
             text-align: center;
 
             h1 {
                 font-size: 16px;
+                color: $bg;
             }
         }
 
@@ -47,7 +51,7 @@
                         width: 7px;
                         height: 7px;
                         border-radius: 50%;
-                        background-color: $onbg;
+                        background-color: $primary;
                     }
                 }
 
@@ -72,4 +76,18 @@
             cursor: pointer;
         }
     }
+}
+
+::-webkit-scrollbar-track {
+    background-color: $surf;
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+    background: $surf;
+}
+
+::-webkit-scrollbar-thumb {
+    background: $primary;
+    border-radius: 5px;
 }
