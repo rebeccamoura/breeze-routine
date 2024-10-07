@@ -1,0 +1,35 @@
+@import '../../../../../assets/styles/fonts/icons';
+@import '../../../../../assets/styles/utils/utils';
+
+.create-edit-container {
+    padding: 30px;
+
+    h1 {
+        font-size: 20px;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+
+    form {
+        mat-form-field {
+            width: 100%;
+        }
+
+        .btn {
+            font-size: 14px;
+            color: $secondary;
+            padding: 20px;
+
+            &.create {
+                background-color: $confirm;
+            }
+        }
+
+        .actions {
+            margin-top: 15px;
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+}

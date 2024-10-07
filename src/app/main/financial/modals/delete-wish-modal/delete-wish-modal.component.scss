@@ -1,0 +1,40 @@
+@import '../../../../../assets/styles/utils/divider';
+@import '../../../../../assets/styles/utils/buttons';
+@import '../../../../../assets/styles/fonts/icons';
+@import '../../../../../assets/styles/variables';
+
+.delete-wish {
+    padding: 30px;
+
+    .warn {
+        font-weight: bold;
+        font-size: 20px;
+        display: flex;
+
+        span {
+            color: $warn;
+        }
+    }
+
+    .confirm-removal {
+        font-size: 14px;
+        font-weight: bold;
+    }
+
+    .actions {
+        margin-top: 15px;
+        display: flex;
+        justify-content: space-between;
+
+        .btn {
+            font-size: 14px;
+            color: $secondary;
+            padding: 20px;
+            cursor: pointer;
+
+            &.remove {
+                background-color: $danger;
+            }
+        }
+    }
+}

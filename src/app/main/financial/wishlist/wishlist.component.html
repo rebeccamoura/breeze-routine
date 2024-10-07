@@ -13,19 +13,19 @@
             <li *ngFor="let wish of wishes">
                 <span class="wish">{{ wish }}</span>
                 <div class="actions">
-                    <span class="icon material-symbols-outlined">
+                    <span (click)="openAchieveWishModal()" class="icon material-symbols-outlined">
                         new_releases
                     </span>
-                    <span class="icon material-symbols-outlined">
+                    <span (click)="openEditWishModal()" class="icon material-symbols-outlined">
                         edit
                     </span>
-                    <span class="icon material-symbols-outlined">
+                    <span (click)="openRemoveWishModal()" class="icon material-symbols-outlined">
                         remove
                     </span>
                 </div>
             </li>
         </ul>
-        <button class="add-wish">
+        <button class="add-wish" (click)="openNewWishModal()">
             <span class="material-symbols-outlined">
                 add
             </span>

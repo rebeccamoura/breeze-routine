@@ -1,3 +1,116 @@
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use '@angular/material' as mat;
+@include mat.core();
+
+$breeze-routine-primary: mat.define-palette((
+  50: #E0E0E9,
+  100: #B8B8CC,
+  200: #8E8EAD,
+  300: #64648D,
+  400: #444476,
+  500: #3F3D56, // Cor principal
+  600: #36354D,
+  700: #2D2B42,
+  800: #232238,
+  900: #161625,
+  A100: #9F9EFF,
+  A200: #7373FF,
+  A400: #4848FF,
+  A700: #2E2EFF,
+  contrast: (
+    50: black,
+    100: black,
+    200: black,
+    300: white,
+    400: white,
+    500: white,
+    600: white,
+    700: white,
+    800: white,
+    900: white,
+    A100: white,
+    A200: white,
+    A400: white,
+    A700: white
+  )
+));
+$breeze-routine-accent: mat.define-palette((
+  50: #FCFCFB,
+  100: #F5F5F3,
+  200: #EEEDEA,
+  300: #E6E5E1,
+  400: #E1E0DB,
+  500: #E9E7E0, // Cor secundária
+  600: #D3D2CC,
+  700: #CCCAC3,
+  800: #C4C3BA,
+  900: #B6B4AA,
+  A100: #FFFFFF,
+  A200: #FFFFFF,
+  A400: #FFFFFF,
+  A700: #FFFFFF,
+  contrast: (
+    50: black,
+    100: black,
+    200: black,
+    300: black,
+    400: black,
+    500: black,
+    600: black,
+    700: black,
+    800: black,
+    900: black,
+    A100: black,
+    A200: black,
+    A400: black,
+    A700: black
+  )
+));
+$breeze-routine-warn: mat.define-palette((
+  50: #FFEBE3,
+  100: #FFC9B8,
+  200: #FFA38A,
+  300: #FF7C5B,
+  400: #FF5F3A,
+  500: #FF7043, // Cor de aviso
+  600: #E8653C,
+  700: #CF5A34,
+  800: #B74F2D,
+  900: #8F3D20,
+  A100: #FFE6E0,
+  A200: #FFB1A0,
+  A400: #FF8766,
+  A700: #FF7D4E,
+  contrast: (
+    50: black,
+    100: black,
+    200: black,
+    300: black,
+    400: white,
+    500: white,
+    600: white,
+    700: white,
+    800: white,
+    900: white,
+    A100: black,
+    A200: black,
+    A400: white,
+    A700: white
+  )
+));
+
+$breeze-routine-theme: mat.define-light-theme((
+  color: (
+    primary: $breeze-routine-primary,
+    accent: $breeze-routine-accent,
+    warn: $breeze-routine-warn,
+  )
+));
+
+@include mat.all-component-themes($breeze-routine-theme);
+
 @import './assets/styles/variables';
 
 * {

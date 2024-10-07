@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './main/home/home.component';
 import { HeaderComponent } from './shared/header/header.component';
 import { LoginComponent } from './main/login/login.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { LoginComponent } from './main/login/login.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
