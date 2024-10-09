@@ -18,4 +18,8 @@ export class FinancialService {
   public getWishes(): Observable<IWish[]> {
     return this.http.get<IWish[]>(`${this.baseUrl}/wishes`);
   }
+
+  public deleteWish(id: string): Observable<IWish> {
+    return this.http.delete<IWish>(`${this.baseUrl}/wishes/${id}`);
+  }
 }

@@ -47,10 +47,20 @@ export class WishlistComponent {
     );
   }
 
-  public openRemoveWishModal(): void {
-    this.dialog.open<DeleteWishModalComponent>(DeleteWishModalComponent, {
-      width: '350px',
-      disableClose: true,
+  public openRemoveWishModal(wishId: string | undefined): void {
+    const dialogRef = this.dialog.open<DeleteWishModalComponent>(
+      DeleteWishModalComponent,
+      {
+        width: '350px',
+        disableClose: true,
+        data: {
+          wishId: wishId,
+        },
+      }
+    );
+
+    dialogRef.afterClosed().subscribe(() => {
+      this.getWishes();
     });
   }
 
