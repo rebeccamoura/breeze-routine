@@ -4,6 +4,7 @@ import { FinancialRoutingModule } from './financial-routing.module';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 import { WishlistComponent } from './wishlist/wishlist.component';
 import { HeaderComponent } from './header/header.component';
@@ -11,6 +12,7 @@ import { DeleteWishModalComponent } from './modals/delete-wish-modal/delete-wish
 import { AchieveWishModalComponent } from './modals/achieve-wish-modal/achieve-wish-modal.component';
 import { CreateEditWishModalComponent } from './modals/create-edit-wish-modal/create-edit-wish-modal.component';
 
+import { provideHttpClient } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -18,14 +20,17 @@ import { CreateEditWishModalComponent } from './modals/create-edit-wish-modal/cr
     HeaderComponent,
     DeleteWishModalComponent,
     AchieveWishModalComponent,
-    CreateEditWishModalComponent
+    CreateEditWishModalComponent,
   ],
   imports: [
     CommonModule,
     FinancialRoutingModule,
     MatDialogModule,
     MatFormFieldModule,
-    MatInputModule
-  ]
+    MatInputModule,
+    ReactiveFormsModule,
+    FormsModule,
+  ],
+  providers: [provideHttpClient()],
 })
-export class FinancialModule { }
+export class FinancialModule {}

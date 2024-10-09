@@ -6,15 +6,15 @@
         {{ createEditWishData.isEdit ? 'Editar desejo' : 'Novo desejo'}}
     </h1>
     <div class="divider"></div>
-    <form>
+    <form [formGroup]="wishForm">
         <mat-form-field appearance="outline">
             <mat-label>Qual é o seu desejo?</mat-label>
-            <input matInput type="text">
+            <input formControlName="wish" matInput type="text" required>
             <mat-error>A descrição do desejo é obrigatória.</mat-error>
         </mat-form-field>
         <div class="actions">
             <button class="btn cancel" mat-dialog-close>Cancelar</button>
-            <button type="submit" class="btn create" (click)="createEditWishData.isEdit ? editWish() : createWish()">
+            <button type="button" class="btn create" (click)="createEditWishData.isEdit ? editWish() : createWish()">
                 {{ createEditWishData.isEdit ? 'Editar desejo' : 'Criar desejo' }}
             </button>
         </div>
