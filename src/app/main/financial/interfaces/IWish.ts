@@ -1,4 +1,4 @@
 export interface IWish {
   id?: string;
-  wish: string;
+  title: string;
 }

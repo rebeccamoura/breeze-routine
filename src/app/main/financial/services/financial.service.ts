@@ -14,4 +14,8 @@ export class FinancialService {
   public createWish(wish: IWish): Observable<IWish> {
     return this.http.post<IWish>(`${this.baseUrl}/wishes`, wish);
   }
+
+  public getWishes(): Observable<IWish[]> {
+    return this.http.get<IWish[]>(`${this.baseUrl}/wishes`);
+  }
 }

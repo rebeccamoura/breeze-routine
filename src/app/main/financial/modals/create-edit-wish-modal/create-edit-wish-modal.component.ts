@@ -4,6 +4,7 @@ import { ICreateEditWishData } from '../../interfaces/ICreateEditWishData';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { FinancialService } from '../../services/financial.service';
 import { DialogRef } from '@angular/cdk/dialog';
+import { IWish } from '../../interfaces/IWish';
 
 @Component({
   selector: 'app-create-edit-wish-modal',
@@ -20,14 +21,14 @@ export class CreateEditWishModalComponent {
     private dialogRef: DialogRef<CreateEditWishModalComponent>
   ) {
     this.wishForm = this.formBuilder.group({
-      wish: [''],
+      title: [''],
     });
   }
 
   public createWish(): void {
     this.financialService
       .createWish(this.wishForm.value)
-      .subscribe((success) => {
+      .subscribe((wish: IWish) => {
         this.dialogRef.close();
       });
   }

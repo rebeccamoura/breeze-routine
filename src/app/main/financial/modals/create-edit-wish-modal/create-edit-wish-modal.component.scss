@@ -24,6 +24,11 @@
 
             &.create {
                 background-color: $confirm;
+
+                &:disabled {
+                    background-color: rgb(149, 149, 149);
+                    cursor: not-allowed;
+                }
             }
         }
 

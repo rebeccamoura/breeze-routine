@@ -10,8 +10,14 @@
             <h1>Desejos para realizar</h1>
         </header>
         <ul>
+            <p class="no-wishes" *ngIf="wishes.length <= 0">
+                Não há nenhum desejo cadastrado. Crie um novo desejo clicando no ícone <span (click)="openNewWishModal()"
+                    class="material-symbols-outlined">
+                    add
+                </span>
+            </p>
             <li *ngFor="let wish of wishes">
-                <span class="wish">{{ wish }}</span>
+                <span class="wish">{{ wish.title }}</span>
                 <div class="actions">
                     <span (click)="openAchieveWishModal()" class="icon material-symbols-outlined">
                         new_releases
