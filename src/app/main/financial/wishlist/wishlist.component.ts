@@ -18,6 +18,10 @@ export class WishlistComponent {
     private dialog: MatDialog,
     private financialService: FinancialService
   ) {
+    this.getWishes();
+  }
+
+  private getWishes(): void {
     this.financialService.getWishes().subscribe((wishes: IWish[]) => {
       this.wishes = wishes;
     });
@@ -51,7 +55,7 @@ export class WishlistComponent {
   }
 
   public openNewWishModal(): void {
-    this.dialog.open<CreateEditWishModalComponent>(
+    const dialogRef = this.dialog.open<CreateEditWishModalComponent>(
       CreateEditWishModalComponent,
       {
         width: '350px',
@@ -61,5 +65,9 @@ export class WishlistComponent {
         },
       }
     );
+
+    dialogRef.afterClosed().subscribe(() => {
+      this.getWishes();
+    });
   }
 }
