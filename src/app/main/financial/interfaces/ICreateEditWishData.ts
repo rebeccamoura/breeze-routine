@@ -1,3 +1,6 @@
+import { IWish } from './IWish';
+
 export interface ICreateEditWishData {
-    isEdit: boolean;
+  isEdit: boolean;
+  wish: IWish;
 }

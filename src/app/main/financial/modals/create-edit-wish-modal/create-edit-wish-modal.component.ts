@@ -21,7 +21,9 @@ export class CreateEditWishModalComponent {
     private dialogRef: DialogRef<CreateEditWishModalComponent>
   ) {
     this.wishForm = this.formBuilder.group({
-      title: [''],
+      title: this.createEditWishData.wish
+        ? this.createEditWishData.wish.title
+        : [''],
     });
   }
 
@@ -33,5 +35,14 @@ export class CreateEditWishModalComponent {
       });
   }
 
-  public editWish() {}
+  public editWish(): void {
+    this.financialService
+      .editWish(
+        this.createEditWishData.wish.id ? this.createEditWishData.wish.id : '',
+        this.wishForm.value
+      )
+      .subscribe((updatedWish: IWish) => {
+        this.dialogRef.close();
+      });
+  }
 }

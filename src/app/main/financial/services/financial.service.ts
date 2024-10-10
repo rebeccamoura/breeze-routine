@@ -22,4 +22,8 @@ export class FinancialService {
   public deleteWish(id: string): Observable<IWish> {
     return this.http.delete<IWish>(`${this.baseUrl}/wishes/${id}`);
   }
+
+  public editWish(id: string, newWish: IWish): Observable<IWish> {
+    return this.http.patch<IWish>(`${this.baseUrl}/wishes/${id}`, newWish);
+  }
 }

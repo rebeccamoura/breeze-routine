@@ -34,27 +34,32 @@ export class WishlistComponent {
     });
   }
 
-  public openEditWishModal(): void {
-    this.dialog.open<CreateEditWishModalComponent>(
+  public openEditWishModal(wish: IWish): void {
+    const dialogRef = this.dialog.open<CreateEditWishModalComponent>(
       CreateEditWishModalComponent,
       {
         width: '350px',
         disableClose: true,
         data: {
           isEdit: true,
+          wish: wish,
         },
       }
     );
+
+    dialogRef.afterClosed().subscribe(() => {
+      this.getWishes();
+    });
   }
 
-  public openRemoveWishModal(wishId: string | undefined): void {
+  public openRemoveWishModal(wish: IWish): void {
     const dialogRef = this.dialog.open<DeleteWishModalComponent>(
       DeleteWishModalComponent,
       {
         width: '350px',
         disableClose: true,
         data: {
-          wishId: wishId,
+          wish: wish,
         },
       }
     );
