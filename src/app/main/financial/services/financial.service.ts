@@ -24,6 +24,12 @@ export class FinancialService {
   }
 
   public editWish(id: string, newWish: IWish): Observable<IWish> {
-    return this.http.patch<IWish>(`${this.baseUrl}/wishes/${id}`, newWish);
+    return this.http.put<IWish>(`${this.baseUrl}/wishes/${id}`, newWish);
+  }
+
+  public achieveWish(id: string, isAchieved: boolean): Observable<IWish> {
+    return this.http.patch<IWish>(`${this.baseUrl}/wishes/${id}`, {
+      isAchieved: isAchieved,
+    });
   }
 }

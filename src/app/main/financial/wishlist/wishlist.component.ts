@@ -13,6 +13,8 @@ import { IWish } from '../interfaces/IWish';
 })
 export class WishlistComponent {
   public wishes: IWish[] = [];
+  public notAchievedWishes!: any;
+  public achievedWishes!: any;
 
   constructor(
     private dialog: MatDialog,
@@ -24,13 +26,26 @@ export class WishlistComponent {
   private getWishes(): void {
     this.financialService.getWishes().subscribe((wishes: IWish[]) => {
       this.wishes = wishes;
+      this.notAchievedWishes = wishes.filter(
+        (wish) => wish.isAchieved === false
+      );
+      this.achievedWishes = wishes.filter((wish) => wish.isAchieved === true);
     });
   }
 
-  public openAchieveWishModal(): void {
-    this.dialog.open<AchieveWishModalComponent>(AchieveWishModalComponent, {
-      width: '350px',
-      disableClose: true,
+  private filterWishes(type: string) {}
+
+  public openAchieveWishModal(wish: IWish): void {
+    const dialogRef = this.dialog.open<AchieveWishModalComponent>(
+      AchieveWishModalComponent,
+      {
+        width: '350px',
+        disableClose: true,
+        data: wish,
+      }
+    );
+    dialogRef.afterClosed().subscribe(() => {
+      this.getWishes();
     });
   }
 
@@ -58,9 +73,7 @@ export class WishlistComponent {
       {
         width: '350px',
         disableClose: true,
-        data: {
-          wish: wish,
-        },
+        data: wish,
       }
     );
 

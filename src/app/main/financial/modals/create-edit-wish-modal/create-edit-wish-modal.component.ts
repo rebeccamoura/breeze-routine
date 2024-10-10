@@ -24,6 +24,9 @@ export class CreateEditWishModalComponent {
       title: this.createEditWishData.wish
         ? this.createEditWishData.wish.title
         : [''],
+      isAchieved: this.createEditWishData.wish
+        ? this.createEditWishData.wish.isAchieved
+        : [false],
     });
   }
 

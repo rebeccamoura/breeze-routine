@@ -4,37 +4,52 @@
     router="/"
 ></app-header>
 <section class="wishlist">
-    <section class="achieved-wishes"></section>
     <section class="wishes">
         <header class="wishes-header">
             <h1>Desejos para realizar</h1>
         </header>
         <ul>
-            <p class="no-wishes" *ngIf="wishes.length <= 0">
+            <p class="no-wishes" *ngIf="!notAchievedWishes?.length">
                 Não há nenhum desejo cadastrado. Crie um novo desejo clicando no ícone abaixo <span (click)="openNewWishModal()"
                     class="material-symbols-outlined">
                     add
                 </span>
             </p>
-            <li *ngFor="let wish of wishes">
-                <span class="wish">{{ wish.title }}</span>
-                <div class="actions">
-                    <span (click)="openAchieveWishModal()" class="icon material-symbols-outlined">
-                        new_releases
-                    </span>
-                    <span (click)="openEditWishModal(wish)" class="icon material-symbols-outlined">
-                        edit
-                    </span>
-                    <span (click)="openRemoveWishModal(wish)" class="icon material-symbols-outlined">
-                        remove
-                    </span>
-                </div>
-            </li>
+            <ng-container *ngIf="notAchievedWishes?.length">
+                <li *ngFor="let wish of notAchievedWishes">
+                    <span class="wish">{{ wish.title }}</span>
+                    <div class="actions">
+                        <span (click)="openAchieveWishModal(wish)" class="icon material-symbols-outlined">
+                            new_releases
+                        </span>
+                        <span (click)="openEditWishModal(wish)" class="icon material-symbols-outlined">
+                            edit
+                        </span>
+                        <span (click)="openRemoveWishModal(wish)" class="icon material-symbols-outlined">
+                            remove
+                        </span>
+                    </div>
+                </li>
+            </ng-container>
         </ul>
         <button class="add-wish" (click)="openNewWishModal()">
             <span class="material-symbols-outlined">
                 add
             </span>
         </button>
+    </section>
+    <section class="achieved-wishes">
+        <img src="../../../../assets/images/achieved-wishes.svg" alt="Ilustração de celebração pela sua conquista">
+        <ul>
+            <h1>Desejos já conquistados</h1>
+            <p *ngIf="!achievedWishes?.length">
+                Nenhum desejo foi conquistado ainda, o primeiro é um sonho!
+            </p>
+            <ng-container *ngIf="achievedWishes?.length">
+                <li *ngFor="let achievedWish of achievedWishes">
+                    {{ achievedWish.title }}
+                </li>
+            </ng-container>
+        </ul>
     </section>
 </section>

@@ -12,13 +12,13 @@ import { DialogRef } from '@angular/cdk/dialog';
 export class DeleteWishModalComponent {
   constructor(
     private financialService: FinancialService,
-    @Inject(MAT_DIALOG_DATA) public wishData: { wish: IWish },
+    @Inject(MAT_DIALOG_DATA) public wish: IWish,
     private dialogRef: DialogRef<DeleteWishModalComponent>
   ) {}
 
   public deleteWish(): void {
     this.financialService
-      .deleteWish(this.wishData.wish.id ? this.wishData.wish.id : '')
+      .deleteWish(this.wish.id ? this.wish.id : '')
       .subscribe((wish: IWish) => {
         this.dialogRef.close();
       });

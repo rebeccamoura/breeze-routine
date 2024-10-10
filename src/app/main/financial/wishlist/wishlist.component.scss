@@ -2,6 +2,7 @@
 @import '../../../../assets/styles/fonts/icons';
 
 .wishlist {
+    display: flex;
     .wishes {
         background-color: $surf;
         width: 100%;
@@ -87,6 +88,25 @@
             padding: 0 30px 15px 0;
             color: unset;
             cursor: pointer;
+        }
+    }
+
+    .achieved-wishes {
+        display: flex;
+        align-items: center;
+
+        ul {
+            h1 {
+                font-size: 16px;
+            }
+
+            li {
+                font-size: 14px;
+                font-weight: 500;
+            }
+        }
+        img {
+            width: 150px;
         }
     }
 }
